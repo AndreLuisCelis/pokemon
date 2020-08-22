@@ -1,0 +1,5 @@
+<mat-progress-bar *ngIf="!card"  mode="indeterminate"></mat-progress-bar>
+<img *ngIf="card"  src="{{card?.imageUrlHiRes}}" style="width: 400px;">
+<h1 *ngIf="!card" >Pesquisando ...  {{data.name}}
+  <h2 *ngIf="timeout" > Não encontrado</h2>
+</h1>

@@ -1,0 +1,49 @@
+<div class="grid-container">
+  <mat-grid-list cols="1" rowHeight="40:21">
+    <mat-grid-tile *ngFor="let card of cards" [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content" style="cursor: pointer;">
+
+          <mat-grid-list cols='3' rowHeight='10:14'>
+
+            <mat-grid-tile [colspan]=2>
+              <div class = 'descricao'>
+                <h1>{{card.name}}</h1>
+                <div>ID: {{card.id}}</div>
+                <div *ngIf="card.types" >Tipo: {{card.types}}</div>
+                <div *ngFor="let item of card.attacks">
+                  <h2>{{item.name}}</h2>
+                  <span> Custo de Mana: {{item.cost}}</span>
+                  <span> Dano: {{item.damage}} </span>
+                  <span *ngIf="item.text" > Descrição: {{item.text}} </span>
+                </div>
+
+                <div>
+                  <span *ngFor="let item of card.resistances"> Resistencia: {{item.type}}</span>
+                </div>
+
+                <div>
+                  <span *ngFor="let item of card.weaknesses">Fraquezas: {{item.type}}</span>
+                </div>
+
+
+              </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]=1>
+              <div>
+                <img src="{{card.imageUrlHiRes}}" style="width: 100%;cursor:pointer" alt="">
+              </div>
+            </mat-grid-tile>
+
+          </mat-grid-list>
+
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
