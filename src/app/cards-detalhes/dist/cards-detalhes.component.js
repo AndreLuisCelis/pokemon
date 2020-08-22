@@ -9,8 +9,7 @@ exports.__esModule = true;
 exports.CardsDetalhesComponent = void 0;
 var core_1 = require("@angular/core");
 var CardsDetalhesComponent = /** @class */ (function () {
-    function CardsDetalhesComponent(breakpointObserver, route) {
-        this.breakpointObserver = breakpointObserver;
+    function CardsDetalhesComponent(route) {
         this.route = route;
         this.cards = [];
     }
@@ -20,7 +19,6 @@ var CardsDetalhesComponent = /** @class */ (function () {
     CardsDetalhesComponent.prototype.getcards = function () {
         var _this = this;
         this.route.data.subscribe(function (res) {
-            console.log('resposta', res);
             _this.cards = res.card.cards;
             _this.cards.sort(function (a, b) {
                 var nameA = a.name;

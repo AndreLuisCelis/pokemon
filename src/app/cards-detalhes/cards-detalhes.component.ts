@@ -1,34 +1,28 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import {  BreakpointObserver } from '@angular/cdk/layout';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cards-detalhes',
   templateUrl: './cards-detalhes.component.html',
   styleUrls: ['./cards-detalhes.component.scss'],
-  //  encapsulation: ViewEncapsulation.None
 })
-export class CardsDetalhesComponent {
+export class CardsDetalhesComponent implements OnInit {
   cards = [];
 
   constructor(
-    private breakpointObserver: BreakpointObserver,
     private route: ActivatedRoute,
     ) {}
 
-    ngOnInit() {
+    ngOnInit(): void {
       this.getcards();
     }
 
   getcards(): void {
     this.route.data.subscribe(res => {
-      console.log('resposta', res);
       this.cards = res.card.cards;
-
       this.cards.sort((a, b) => {
         const nameA = a.name;
         const nameB = b.name;
-
         if (nameA < nameB){
           return -1;
         }

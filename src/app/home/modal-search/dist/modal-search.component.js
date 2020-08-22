@@ -20,7 +20,6 @@ var ModalSearchComponent = /** @class */ (function () {
         this.timeout = false;
     }
     ModalSearchComponent.prototype.ngOnInit = function () {
-        console.log(this.data);
         this.getSearchPokemon();
     };
     ModalSearchComponent.prototype.ngAfterViewInit = function () {
@@ -31,12 +30,15 @@ var ModalSearchComponent = /** @class */ (function () {
     };
     ModalSearchComponent.prototype.getSearchPokemon = function () {
         var _this = this;
-        this.service.searchCard(this.data.name).subscribe(function (res) {
-            console.log(res);
+        this.subs = this.service.searchCard(this.data.name).subscribe(function (res) {
             _this.card = res.cards[0];
         }, function (err) {
-            console.log(err);
         });
+    };
+    ModalSearchComponent.prototype.ngOnDestroy = function () {
+        if (this.subs) {
+            this.subs.unsubscribe();
+        }
     };
     ModalSearchComponent = __decorate([
         core_1.Component({

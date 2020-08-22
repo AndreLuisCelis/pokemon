@@ -20,7 +20,6 @@ var ModalCardComponent = /** @class */ (function () {
         this.spiner = true;
     }
     ModalCardComponent.prototype.ngOnInit = function () {
-        console.log(this.data);
     };
     ModalCardComponent.prototype.ngAfterViewInit = function () {
         var _this = this;

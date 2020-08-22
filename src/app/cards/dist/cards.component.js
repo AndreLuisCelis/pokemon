@@ -18,12 +18,9 @@ var CardsComponent = /** @class */ (function () {
     CardsComponent.prototype.ngOnInit = function () {
         this.getcards();
     };
-    CardsComponent.prototype.ngOnDestroy = function () {
-    };
     CardsComponent.prototype.getcards = function () {
         var _this = this;
-        this.route.data.subscribe(function (res) {
-            console.log('resposta', res);
+        this.subs = this.route.data.subscribe(function (res) {
             _this.cards = res.card.cards;
             _this.cards.sort(function (a, b) {
                 var nameA = a.name;
@@ -61,8 +58,12 @@ var CardsComponent = /** @class */ (function () {
             data: { card: card }
         });
         dialogRef.afterClosed().subscribe(function (result) {
-            console.log("Dialog result: " + result);
         });
+    };
+    CardsComponent.prototype.ngOnDestroy = function () {
+        if (this.subs) {
+            this.subs.unsubscribe();
+        }
     };
     CardsComponent = __decorate([
         core_1.Component({
