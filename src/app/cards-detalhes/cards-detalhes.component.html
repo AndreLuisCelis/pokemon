@@ -15,12 +15,21 @@
                 <h1>{{card.name}}</h1>
                 <div>ID: {{card.id}}</div>
                 <div *ngIf="card.types" >Tipo: {{card.types}}</div>
-                <div *ngFor="let item of card.attacks">
-                  <h2>{{item.name}}</h2>
-                  <span> Custo de Mana: {{item.cost}}</span>
-                  <span> Dano: {{item.damage}} </span>
-                  <span *ngIf="item.text" > Descrição: {{item.text}} </span>
+
+                <div class="ataques" *ngIf="card.attacks" >
+                  <h2>Ataques :</h2>
+                  <div *ngFor="let item of card.attacks">
+                    <h3>{{item.name}}</h3>
+                    <span> Custo de Mana:
+                      <span *ngFor="let mana of item.cost" >
+                        <span class = 'mana' [ngStyle]="{'background-color': getColorMana(mana)}"></span>
+                      </span>{{item.cost}}</span>
+
+                    <span> Dano: {{item.damage}} </span>
+                    <span *ngIf="item.text" > Descrição: {{item.text}} </span>
+                  </div>
                 </div>
+
 
                 <div>
                   <span *ngFor="let item of card.resistances"> Resistencia: {{item.type}}</span>

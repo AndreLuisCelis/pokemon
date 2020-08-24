@@ -1,3 +1,8 @@
+<div class="">
+  <mat-icon mat-dialog-close class="float-right">close</mat-icon>
+   <h2 *ngIf="card?.name" >{{card?.name}}</h2>
+   <h2 *ngIf="!card" >  {{data.name}} </h2>
+</div>
 <div class='animate__animated animate__bounceInDown'>
   <mat-progress-bar *ngIf="!card" mode="indeterminate"></mat-progress-bar>
   <img *ngIf="card" src="{{card?.imageUrlHiRes}}" style="width: 400px;">

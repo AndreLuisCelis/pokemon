@@ -1,10 +1,9 @@
 .grid-container {
   margin: 20px;
-  .pointer{
-    cursor: pointer;
-  }
 }
-
+.grid-container .pointer {
+  cursor: pointer;
+}
 
 .dashboard-card {
   position: absolute;
@@ -13,8 +12,9 @@
   right: 15px;
   bottom: 15px;
 }
-.dashboard-card:hover{
-  border: solid 2px rgb(128, 0, 128,0.5);
+
+.dashboard-card:hover {
+  border: solid 2px rgba(128, 0, 128, 0.5);
 }
 
 .more-button {
@@ -26,11 +26,13 @@
 .dashboard-card-content {
   text-align: center;
 }
+
 .mat-card-header .mat-card-title {
   margin-bottom: 2px;
   font-size: 18px;
 }
-.mat-card-header{
+
+.mat-card-header {
   display: block;
   text-align: center;
 }

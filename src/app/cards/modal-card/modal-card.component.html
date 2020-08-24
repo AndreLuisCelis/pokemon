@@ -1,5 +1,12 @@
-<div class ='animate__animated animate__fadeInRight'>
-  <mat-progress-bar *ngIf="spiner"  mode="indeterminate"></mat-progress-bar>
-  <img ngif src="{{data.card.imageUrlHiRes}}" style="width: 400px;">
+<div class="">
+  <mat-icon mat-dialog-close class="float-right">close</mat-icon>
+   <h2>{{data.card.name}}</h2>
+</div>
+
+<div class="">
+  <div class ='animate__animated animate__fadeInRight'>
+    <mat-progress-bar *ngIf="spiner"  mode="indeterminate"></mat-progress-bar>
+    <img ngif src="{{data.card.imageUrlHiRes}}" style="width: 400px;">
+  </div>
 </div>
 

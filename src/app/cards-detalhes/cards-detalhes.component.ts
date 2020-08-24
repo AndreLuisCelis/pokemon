@@ -51,5 +51,42 @@ export class CardsDetalhesComponent implements OnInit {
       return 1;
     }
   }
+  console( item: any): void {
+    console.log(item);
+  }
+
+  getColorMana(mana: any): string{
+    if (mana === 'Colorless'){
+      return '#ccc';
+    }
+    if (mana === 'Metal'){
+      return '#555';
+    }
+    if (mana === 'Grass'){
+      return 'green';
+    }
+    if (mana === 'Psychic'){
+      return 'purple';
+    }
+    if (mana === 'Water'){
+      return 'blue';
+    }
+    if (mana === 'Fighting'){
+      return 'brown';
+    }
+    if (mana === 'Lightning'){
+      return 'yellow';
+    }
+    if (mana === 'Darkness'){
+      return '#123';
+    }
+    if (mana === 'Fairy'){
+      return 'pink';
+    }
+    if (mana === 'Fire'){
+      return 'red';
+    }
+    return 'white';
+  }
 }
 
