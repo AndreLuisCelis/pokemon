@@ -11,11 +11,11 @@ export class CardsDetalhesComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    ) {}
+  ) { }
 
-    ngOnInit(): void {
-      this.getcards();
-    }
+  ngOnInit(): void {
+    this.getcards();
+  }
 
   getcards(): void {
     this.route.data.subscribe(res => {
@@ -23,10 +23,10 @@ export class CardsDetalhesComponent implements OnInit {
       this.cards.sort((a, b) => {
         const nameA = a.name;
         const nameB = b.name;
-        if (nameA < nameB){
+        if (nameA < nameB) {
           return -1;
         }
-        if (nameA > nameB){
+        if (nameA > nameB) {
           return 1;
         }
         return 0;
@@ -51,42 +51,58 @@ export class CardsDetalhesComponent implements OnInit {
       return 1;
     }
   }
-  console( item: any): void {
+  console(item: any): void {
     console.log(item);
   }
 
-  getColorMana(mana: any): string{
-    if (mana === 'Colorless'){
+  getColorMana(mana: any): string {
+    if (mana === 'Colorless') {
       return '#ccc';
     }
-    if (mana === 'Metal'){
+    if (mana === 'Metal') {
       return '#555';
     }
-    if (mana === 'Grass'){
+    if (mana === 'Grass') {
       return 'green';
     }
-    if (mana === 'Psychic'){
+    if (mana === 'Psychic') {
       return 'purple';
     }
-    if (mana === 'Water'){
+    if (mana === 'Water') {
       return 'blue';
     }
-    if (mana === 'Fighting'){
+    if (mana === 'Fighting') {
       return 'brown';
     }
-    if (mana === 'Lightning'){
+    if (mana === 'Lightning') {
       return 'yellow';
     }
-    if (mana === 'Darkness'){
+    if (mana === 'Darkness') {
       return '#123';
     }
-    if (mana === 'Fairy'){
+    if (mana === 'Fairy') {
       return 'pink';
     }
-    if (mana === 'Fire'){
+    if (mana === 'Fire') {
       return 'red';
     }
     return 'white';
+  }
+
+  ajuste1(): number {
+    const tela = window.innerWidth;
+    if (tela <= 500) {
+      return 3;
+    }
+    return 1;
+  }
+
+  ajuste2(): number {
+    const tela = window.innerWidth;
+    if (tela <= 500) {
+      return 3;
+    }
+    return 2;
   }
 }
 

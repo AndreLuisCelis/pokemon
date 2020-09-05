@@ -1,18 +1,26 @@
 <div class="grid-container animate__animated animate__fadeInRight">
-  <mat-grid-list cols="1" rowHeight="40:21">
-    <mat-grid-tile *ngFor="let card of cards" [colspan]="1" [rowspan]="1">
+  <mat-grid-list cols="1" rowHeight = "70vmin">
+    <mat-grid-tile *ngFor="let card of cards" [colspan]="1" [rowspan]="ajuste1()">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
+            {{card.name}}
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content" style="cursor: pointer;">
 
-          <mat-grid-list cols='3' rowHeight='10:14'>
+        <mat-card-content class="dashboard-card-content">
+          <mat-grid-list cols='3' rowHeight = "58vmin">
 
-            <mat-grid-tile [colspan]=2>
+            <mat-grid-tile [colspan]= 'ajuste1()' [rowspan]=1.4>
+
+              <img src="{{card.imageUrlHiRes}}"
+              style="width: 60%;cursor:pointer"
+              alt=""
+               class = "my-2" >
+          </mat-grid-tile>
+
+            <mat-grid-tile [colspan]= "ajuste2()" [rowspan]=1.6>
               <div class = 'descricao'>
-                <h1>{{card.name}}</h1>
                 <div>ID: {{card.id}}</div>
                 <div *ngIf="card.types" >Tipo: {{card.types}}</div>
 
@@ -43,11 +51,7 @@
               </div>
             </mat-grid-tile>
 
-            <mat-grid-tile [colspan]=1>
-              <div>
-                <img src="{{card.imageUrlHiRes}}" style="width: 100%;cursor:pointer" alt="">
-              </div>
-            </mat-grid-tile>
+
 
           </mat-grid-list>
 
