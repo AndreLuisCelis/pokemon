@@ -1,4 +1,7 @@
 # TestePokemon
+![images](https://user-images.githubusercontent.com/44406649/92312563-4fbbda00-ef98-11ea-9551-faf50a5ec288.png)
+
+# A simple project developed in angular and angular material to test the TGC pokemon api
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
