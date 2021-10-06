@@ -3,7 +3,7 @@
 
 # A simple project developed in angular and angular material to test the TGC pokemon api
 
-## [View project](http://pokemon.celisaplicativos.com.br/)
+## [View project](https://pokemon-tgc-alc.netlify.app/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
